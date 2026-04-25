@@ -1,7 +1,6 @@
 # For a full list of rules, go to https://docs.astral.sh/ruff/rules/
 
 line-length = 100
-target-version = "py314"
 fix = true
 
 exclude = [
