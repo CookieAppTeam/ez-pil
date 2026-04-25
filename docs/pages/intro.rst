@@ -23,7 +23,7 @@ A quick example of how ez-pil works
 
 .. code-block:: python3
 
-    from easy_pil import Editor, Canvas
+    from ez_pil import Editor, Canvas
 
     board = Canvas(width=500, height=500)
     editor = Editor(board)

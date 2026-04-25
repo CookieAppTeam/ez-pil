@@ -5,7 +5,7 @@ Example of owo leveling card
 
 .. code-block:: python3
 
-    from easy_pil import Canvas, Editor, Font
+    from ez_pil import Canvas, Editor, Font
 
     user_data = {
         "name": "tibue99",

@@ -5,9 +5,9 @@ The Python Image Library (PIL) is a Python library for image processing.
 .. toctree::
    :maxdepth: 4
 
-   easy_pil.canvas
-   easy_pil.editor
-   easy_pil.workspace
-   easy_pil.font
-   easy_pil.text
-   easy_pil.utils
+   ez_pil.canvas
+   ez_pil.editor
+   ez_pil.workspace
+   ez_pil.font
+   ez_pil.text
+   ez_pil.utils

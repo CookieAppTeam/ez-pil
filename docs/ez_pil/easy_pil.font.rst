@@ -1,6 +1,6 @@
 Font
 =====================
 
-.. autoclass:: easy_pil.font.Font
+.. autoclass:: ez_pil.font.Font
    :members:
    :undoc-members:

@@ -1,6 +1,6 @@
 Workspace
 =======================
 
-.. autoclass:: easy_pil.workspace.Workspace
+.. autoclass:: ez_pil.workspace.Workspace
    :members:
    :undoc-members:

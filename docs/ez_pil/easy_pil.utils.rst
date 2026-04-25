@@ -1,6 +1,6 @@
 Utils
 ======================
 
-.. automodule:: easy_pil.utils
+.. automodule:: ez_pil.utils
    :members:
    :undoc-members:

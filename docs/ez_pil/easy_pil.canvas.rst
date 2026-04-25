@@ -1,6 +1,6 @@
 Canvas
 =======================
 
-.. autoclass:: easy_pil.canvas.Canvas
+.. autoclass:: ez_pil.canvas.Canvas
    :members:
    :undoc-members:

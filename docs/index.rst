@@ -1,4 +1,4 @@
-Welcome to Easy PIL's documentation!
+Welcome to Ez PIL's documentation!
 ====================================
 A python library built on top of PIL to easily edit images.
 

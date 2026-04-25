@@ -7,7 +7,7 @@ This will make command author's avatar circular and send it
 
     from nextcord import File
     from nextcord.ext.commands import Bot
-    from easy_pil import Editor, load_image_async
+    from ez_pil import Editor, load_image_async
 
     bot = Bot(command_prefix='!')
 

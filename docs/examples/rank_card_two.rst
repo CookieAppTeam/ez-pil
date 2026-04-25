@@ -5,7 +5,7 @@ Example of a rank card
 
 .. code-block:: python3
 
-    from easy_pil import Canvas, Editor, Font, Text
+    from ez_pil import Canvas, Editor, Font, Text
 
     user_data = {  # Most likely coming from database or calculation
         "name": "tibue99",  # The user's name
