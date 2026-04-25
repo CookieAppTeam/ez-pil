@@ -29,27 +29,16 @@ combine_as_imports = true
 combine_star = true
 line_length = 79
 
-[tool.poetry.dependencies]
-python = ">=3.8.1,<3.15"
-pillow = "^10.1.0"
-aiohttp = "^3.10.5"
-requests = "^2.30.0"
-typing-extensions = "^4.8.0"
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+version = {attr = "ezcord.__version__"}
 
-[tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-isort = "^5.12.0"
-pyright = "^1.1.308"
-flake8 = "^6.0.0"
-pytest = "^7.3.1"
-
-[tool.poetry.group.docs.dependencies]
-sphinx = "6.2.1"
-furo = "^2023.3.27"
+[tool.setuptools.dynamic.optional-dependencies]
+docs = {file = "docs/requirements.txt"}
 
 [build-system]
-requires = ["poetry-core", "setuptools", "wheel"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=62.6", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.commands]
 fmt = "python3 -m black . ;python3 -m isort ."
