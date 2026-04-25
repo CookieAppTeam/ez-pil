@@ -31,7 +31,7 @@ line_length = 79
 
 [tool.setuptools.dynamic]
 dependencies = {file = "requirements.txt"}
-version = {attr = "ezcord.__version__"}
+version = {attr = "easy_pil.__version__"}
 
 [tool.setuptools.dynamic.optional-dependencies]
 docs = {file = "docs/requirements.txt"}
