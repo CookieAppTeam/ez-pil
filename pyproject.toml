@@ -1,6 +1,5 @@
 [project]
 name = "easy-pil"
-version = "0.4.0"
 description = "A Python library built on top of PIL to easily edit/modify images"
 readme = "README.md"
 requires-python = ">=3.9"
