@@ -1,4 +1,4 @@
-from easy_pil import Canvas, Editor, Font
+from ez_pil import Canvas, Editor, Font
 
 user_data = {  # Most likely coming from database or calculation
     "name": "Shahriyar#9770",  # The user's name

@@ -1,6 +1,6 @@
 Examples
 =================
-Here are some examples made using easy-pil
+Here are some examples made using ez-pil
 
 .. toctree::
    :maxdepth: 4

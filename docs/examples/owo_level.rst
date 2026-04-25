@@ -1,6 +1,6 @@
 Owo Level
 =========
-Example of owo leveling card made using easy-pil
+Example of owo leveling card
 
 
 .. code-block:: python3

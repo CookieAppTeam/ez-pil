@@ -1,4 +1,4 @@
-from easy_pil import Canvas, Editor, Font
+from ez_pil import Canvas, Editor, Font
 
 background = Editor(Canvas((900, 270), color="#23272a"))
 profile = Editor("assets/pfp.png").resize((200, 200)).circle_image()

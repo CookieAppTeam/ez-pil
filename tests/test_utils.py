@@ -2,7 +2,7 @@ import unittest
 
 from PIL import Image
 
-from easy_pil import AioEditor, Canvas, Editor, load_image, load_image_async
+from ez_pil import AioEditor, Canvas, Editor, load_image, load_image_async
 
 
 class TestUtils(unittest.IsolatedAsyncioTestCase):

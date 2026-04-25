@@ -1,6 +1,6 @@
 Discord bot
 =========================
-A basic discord bot using `Nextcord <https://nextcord.readthedocs.io>`_ with which uses easy-pil.
+A basic discord bot using `Nextcord <https://nextcord.readthedocs.io>`_ with which uses ez-pil.
 This will make command author's avatar circular and send it
 
 .. code-block:: python3

@@ -1,6 +1,6 @@
 import unittest
 
-from easy_pil import Canvas
+from ez_pil import Canvas
 
 
 class TestCanvas(unittest.TestCase):

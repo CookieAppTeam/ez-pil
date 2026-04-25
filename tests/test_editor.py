@@ -4,7 +4,7 @@ from io import BytesIO
 
 from PIL import Image
 
-from easy_pil import Canvas, Editor, Font, Text
+from ez_pil import Canvas, Editor, Font, Text
 
 
 class TestEditor(unittest.TestCase):

@@ -1,6 +1,6 @@
 Rank Card [1]
 ==============
-Example of a rank card made using easy-pil
+Example of a rank card
 
 
 .. code-block:: python3
@@ -8,7 +8,7 @@ Example of a rank card made using easy-pil
     from easy_pil import Canvas, Editor, Font
 
     user_data = {  # Most likely coming from database or calculation
-        "name": "Shahriyar#9770",  # The user's name
+        "name": "tibue99",  # The user's name
         "xp": 1240,
         "next_level_xp": 5000,
         "level": 5,

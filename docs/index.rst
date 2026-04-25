@@ -10,7 +10,7 @@ A python library built on top of PIL to easily edit images.
    pages/intro
    pages/discordbot
    pages/aio
-   easy_pil/modules
+   ez-pil/modules
    examples/index
 
 Getting Started
@@ -21,12 +21,6 @@ Using this for the first time? Here are some links to help you get started.
 - In a discord bot :doc:`pages/discordbot`
 - How to use it in async way :doc:`pages/aio`
 - Searching for something :ref:`search` and :ref:`genindex`
-- Report bugs `Here <https://github.com/shahriyardx/easy-pil/issues/>`_
-
-Get help
----------
-- Ask us in our `Discord <https://discord.gg/4rd4JQWmsY>`_ server
-- Watch `Youtube Tutorials <https://www.youtube.com/playlist?list=PLb_oBhGqAlbT4yVqV0TSXggA8b0lZhGhn>`_
 
 Links
 ---------

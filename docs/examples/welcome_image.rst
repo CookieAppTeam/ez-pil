@@ -1,6 +1,6 @@
 Welcome image [1]
 =====================
-Example of a welcome image made using easy-pil
+Example of a welcome image
 
 
 .. code-block:: python3
@@ -28,7 +28,7 @@ Example of a welcome image made using easy-pil
     background.ellipse((40, 35), 200, 200, outline="white", stroke_width=3)
     background.text((600, 20), "WELCOME", font=poppins_big, color="white", align="center")
     background.text(
-        (600, 70), "Shahriyar#9770", font=poppins_regular, color="white", align="center"
+        (600, 70), "tibue99", font=poppins_regular, color="white", align="center"
     )
     background.text(
         (600, 120), "YOU ARE MEMBER", font=poppins_mediam, color="white", align="center"

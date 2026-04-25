@@ -1,25 +1,25 @@
 Introduction
 ============
-This is the documentation for easy-pil, A python library built on top of PIL to easily edit images.
+This is the documentation for ez-pil, A python library built on top of PIL to easily edit images.
 
 Prerequisties
 -------------
-easy-pil requires python 3.7 or higher. Support for previous version is not guranteed.
+Python 3.9 or higher is required.
 
 Installing
 -----------
 
 Install directly from PyPI: ::
 
-    python3 -m pip install -U easy-pil
+    python3 -m pip install -U ez-pil
 
 If you are using Windows, then the following should be used instead: ::
 
-    py -3 -m pip install -U easy-pil
+    py -3 -m pip install -U ez-pil
 
 Basic Concepts
 --------------
-A quick example of how easy-pil works
+A quick example of how ez-pil works
 
 .. code-block:: python3
 
