@@ -12,18 +12,20 @@
 #
 import os
 import sys
+from datetime import date
 
 sys.path.insert(0, os.path.abspath(".."))
 
+from ez_pil import __version__
 
 # -- Project information -----------------------------------------------------
 
-project = "Easy PIL"
-copyright = "2021, Md Shahriyar Alam"
-author = "Md Shahriyar Alam"
+project = "Ez PIL"
+copyright = f"{date.today().year}, tibue99"  # noqa: A001
+author = "tibue99"
 
 # The full version, including alpha/beta/rc tags
-release = "0.2.0"
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------

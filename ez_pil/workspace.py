@@ -1,6 +1,7 @@
 import random
 import string
-from typing import Any, Callable, Dict, Optional, Tuple, Union
+from collections.abc import Callable
+from typing import Any
 
 from .editor import Canvas, Editor
 from .types.common import Color
@@ -8,15 +9,15 @@ from .types.workspace import ComponentKwargs
 
 
 class Workspace:
-    """Workspace class for working with layers and components"""
+    """Workspace class for working with layers and components."""
 
-    def __init__(self, size: Tuple[int, int]) -> None:
+    def __init__(self, size: tuple[int, int]) -> None:
         self.size = size
-        self.layers: dict = dict()
-        self.working_layer = None
+        self.layers: dict = {}
+        self.working_layer: str | None = None
 
     def create_layer(self, name: str, background: Color = (0, 0, 0, 0)):
-        """Creates a layer
+        """Create a layer.
 
         Parameters
         ----------
@@ -29,11 +30,11 @@ class Workspace:
             "metadata": {
                 "background": background,
             },
-            "components": dict(),
+            "components": {},
         }
 
     def remove_layer(self, name: str):
-        """Removes a layer
+        """Remove a layer.
 
         Parameters
         ----------
@@ -53,10 +54,10 @@ class Workspace:
     def update_layer(
         self,
         layer_name: str,
-        new_layer_name: Optional[str] = None,
-        background: Optional[Color] = None,
+        new_layer_name: str | None = None,
+        background: Color | None = None,
     ):
-        """Creates a layer
+        """Create a layer.
 
         Parameters
         ----------
@@ -82,7 +83,7 @@ class Workspace:
             self.layers[new_layer_name] = self.layers.pop(layer_name)
 
     def set_working_layer(self, name: str):
-        """Sets a layer as working layer
+        """Set a layer as working layer.
 
         Parameters
         ----------
@@ -105,12 +106,12 @@ class Workspace:
     def add_component(
         self,
         *,
-        layer_name: Optional[str] = None,
-        identifier: Optional[str] = None,
-        func: Union[Callable, str],
-        options: ComponentKwargs
+        layer_name: str | None = None,
+        identifier: str | None = None,
+        func: Callable | str,
+        options: ComponentKwargs,
     ):
-        """Add component to a layer
+        """Add component to a layer.
 
         Parameters
         ----------
@@ -129,29 +130,23 @@ class Workspace:
             if the layer is not available in the workspace
         """
         if not self.working_layer and not layer_name:
-            raise ValueError(
-                "Either specify layer name or set a working layer"
-            )
+            raise ValueError("Either specify layer name or set a working layer")
 
         layer_name = layer_name or self.working_layer
 
         if layer_name not in self.layers:
             raise ValueError("Invalid layer name")
 
-        func_name = func.__name__ if isinstance(func, Callable) else func
-        identifier_name = (
-            identifier if identifier else self.__get_random_identifier()
-        )
+        func_name = func.__name__ if isinstance(func, Callable) else func  # type: ignore
+        identifier_name = identifier or self.__get_random_identifier()
 
         self.layers[layer_name]["components"][identifier_name] = {
             "func_name": func_name,
             "options": options,
         }
 
-    def remove_component(
-        self, *, layer_name: Optional[str] = None, identifier: str
-    ):
-        """Remove component from a layer
+    def remove_component(self, *, layer_name: str | None = None, identifier: str):
+        """Remove component from a layer.
 
         Parameters
         ----------
@@ -165,11 +160,8 @@ class Workspace:
         ValueError
             if the layer is not available in the workspace
         """
-
         if not self.working_layer and not layer_name:
-            raise ValueError(
-                "Either specify layer name or set a working layer"
-            )
+            raise ValueError("Either specify layer name or set a working layer")
 
         layer_name = layer_name or self.working_layer
 
@@ -179,13 +171,9 @@ class Workspace:
             raise ValueError("Invalid layer name or identifier")
 
     def update_component(
-        self,
-        *,
-        layer_name: Optional[str] = None,
-        identifier: str,
-        options: ComponentKwargs
+        self, *, layer_name: str | None = None, identifier: str, options: ComponentKwargs
     ):
-        """Update component of a layer
+        """Update component of a layer.
 
         Parameters
         ----------
@@ -202,26 +190,20 @@ class Workspace:
             if the layer is not available in the workspace
         """
         if not self.working_layer and not layer_name:
-            raise ValueError(
-                "Either specify layer name or set a working layer"
-            )
+            raise ValueError("Either specify layer name or set a working layer")
 
         layer_name = layer_name or self.working_layer
 
         if layer_name not in self.layers:
             raise ValueError("Invalid layer name")
 
-        self.layers[layer_name]["components"][identifier]["options"].update(
-            options
-        )
+        self.layers[layer_name]["components"][identifier]["options"].update(options)
 
-    def __create_editor_layer(
-        self, size: Tuple[int, int], metadata: Dict[str, Any]
-    ):
+    def __create_editor_layer(self, size: tuple[int, int], metadata: dict[str, Any]):
         return Editor(Canvas(size, color=metadata["background"]))
 
     def generate_image(self) -> Editor:
-        """Generates image from the layers
+        """Generate image from the layers.
 
         Returns
         -------

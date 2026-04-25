@@ -1,7 +1,7 @@
 import asyncio
 import functools
+from collections.abc import Callable
 from io import BytesIO
-from typing import Optional, Union
 
 import aiohttp
 import requests
@@ -9,8 +9,8 @@ from PIL import Image
 from PIL.GifImagePlugin import GifImageFile
 
 
-async def run_in_executor(func, **kwargs):
-    """Run function in executor
+async def run_in_executor(func: Callable, **kwargs):
+    """Run function in executor.
 
     Parameters
     ----------
@@ -22,10 +22,8 @@ async def run_in_executor(func, **kwargs):
     return data
 
 
-def load_image(
-    link: str, raw: bool = False
-) -> Union[Image.Image, GifImageFile]:
-    """Load image from link
+def load_image(link: str, raw: bool = False) -> Image.Image | GifImageFile:
+    """Load image from link.
 
     Parameters
     ----------
@@ -49,10 +47,10 @@ def load_image(
 
 async def load_image_async(
     link: str,
-    session: Optional[aiohttp.ClientSession] = None,
+    session: aiohttp.ClientSession | None = None,
     raw: bool = False,
-) -> Union[Image.Image, GifImageFile]:
-    """Load image from link (async)
+) -> Image.Image | GifImageFile:
+    """Load image from link (async).
 
     Parameters
     ----------

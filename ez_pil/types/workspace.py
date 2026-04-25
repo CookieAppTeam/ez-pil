@@ -1,11 +1,12 @@
 from io import BytesIO
 from pathlib import Path
-from typing import List, Tuple, Union
 
 try:
     from typing import Literal, NotRequired, TypedDict
 except ImportError:
-    from typing_extensions import TypedDict, NotRequired, Literal
+    from typing import Literal, NotRequired
+
+    from typing_extensions import TypedDict
 
 from PIL.Image import Image
 from PIL.ImageFont import FreeTypeFont
@@ -17,8 +18,8 @@ from ..text import Text
 
 
 class ComponentKwargs(TypedDict):
-    size: NotRequired[Tuple[float, float]]
-    position: NotRequired[Tuple[float, float]]
+    size: NotRequired[tuple[float, float]]
+    position: NotRequired[tuple[float, float]]
     crop: NotRequired[bool]
     radius: NotRequired[int]
     offset: NotRequired[int]
@@ -26,20 +27,16 @@ class ComponentKwargs(TypedDict):
     expand: NotRequired[bool]
     mode: NotRequired[Literal["box", "gaussian"]]
     amount: NotRequired[float]
-    image: NotRequired[Union[Image, Editor, Canvas, BytesIO, Path, bytes]]
+    image: NotRequired[Image | Editor | Canvas | BytesIO | Path | bytes]
     alpha: NotRequired[float]
     on_top: NotRequired[bool]
     text: NotRequired[str]
-    font: NotRequired[Union[FreeTypeFont, Font]]
+    font: NotRequired[FreeTypeFont | Font]
     align: NotRequired[Literal["left", "center", "right"]]
-    color: NotRequired[
-        Union[int, str, Tuple[int, int, int], Tuple[int, int, int, int]]
-    ]
-    fill: NotRequired[
-        Union[int, str, Tuple[int, int, int], Tuple[int, int, int, int]]
-    ]
+    color: NotRequired[int | str | tuple[int, int, int] | tuple[int, int, int, int]]
+    fill: NotRequired[int | str | tuple[int, int, int] | tuple[int, int, int, int]]
     space_separated: NotRequired[bool]
-    texts: NotRequired[List[Text]]
+    texts: NotRequired[list[Text]]
     width: NotRequired[float]
     height: NotRequired[float]
     stoke_width: NotRequired[float]

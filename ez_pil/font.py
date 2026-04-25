@@ -1,8 +1,8 @@
 import os
 from functools import lru_cache
+from typing import Literal
 
 from PIL import ImageFont
-from typing_extensions import Literal
 
 fonts_directory = os.path.join(os.path.dirname(__file__), "fonts")
 
@@ -15,34 +15,22 @@ fonts_path = {
         "light": os.path.join(fonts_directory, "caveat", "caveat.ttf"),
     },
     "montserrat": {
-        "regular": os.path.join(
-            fonts_directory, "montserrat", "montserrat_regular.ttf"
-        ),
-        "bold": os.path.join(
-            fonts_directory, "montserrat", "montserrat_bold.ttf"
-        ),
-        "italic": os.path.join(
-            fonts_directory, "montserrat", "montserrat_italic.ttf"
-        ),
-        "light": os.path.join(
-            fonts_directory, "montserrat", "montserrat_light.ttf"
-        ),
+        "regular": os.path.join(fonts_directory, "montserrat", "montserrat_regular.ttf"),
+        "bold": os.path.join(fonts_directory, "montserrat", "montserrat_bold.ttf"),
+        "italic": os.path.join(fonts_directory, "montserrat", "montserrat_italic.ttf"),
+        "light": os.path.join(fonts_directory, "montserrat", "montserrat_light.ttf"),
     },
     "poppins": {
-        "regular": os.path.join(
-            fonts_directory, "poppins", "poppins_regular.ttf"
-        ),
+        "regular": os.path.join(fonts_directory, "poppins", "poppins_regular.ttf"),
         "bold": os.path.join(fonts_directory, "poppins", "poppins_bold.ttf"),
-        "italic": os.path.join(
-            fonts_directory, "poppins", "poppins_italic.ttf"
-        ),
+        "italic": os.path.join(fonts_directory, "poppins", "poppins_italic.ttf"),
         "light": os.path.join(fonts_directory, "poppins", "poppins_light.ttf"),
     },
 }
 
 
 class Font:
-    """Font class
+    """Font class.
 
     Parameters
     ----------
@@ -65,7 +53,7 @@ class Font:
         variant: Literal["regular", "bold", "italic", "light"] = "regular",
         size: int = 10,
     ):
-        """Poppins font
+        """Poppins font.
 
         Parameters
         ----------
@@ -82,7 +70,7 @@ class Font:
         variant: Literal["regular", "bold", "italic", "light"] = "regular",
         size: int = 10,
     ):
-        """Caveat font
+        """Caveat font.
 
         Parameters
         ----------
@@ -99,7 +87,7 @@ class Font:
         variant: Literal["regular", "bold", "italic", "light"] = "regular",
         size: int = 10,
     ):
-        """Montserrat font
+        """Montserrat font.
 
         Parameters
         ----------

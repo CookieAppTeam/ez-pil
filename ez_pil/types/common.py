@@ -1,3 +1,1 @@
-from typing import Tuple, Union
-
-Color = Union[int, str, Tuple[int, int, int], Tuple[int, int, int, int]]
+Color = int | str | tuple[int, int, int] | tuple[int, int, int, int]

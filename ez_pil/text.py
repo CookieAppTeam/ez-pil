@@ -1,12 +1,10 @@
-from typing import Tuple, Union
-
 from PIL import ImageFont
 
 from .font import Font
 
 
 class Text:
-    """Text class
+    """Text class.
 
     Parameters
     ----------
@@ -21,10 +19,8 @@ class Text:
     def __init__(
         self,
         text: str,
-        font: Union[ImageFont.FreeTypeFont, Font],
-        color: Union[
-            int, str, Tuple[int, int, int], Tuple[int, int, int, int]
-        ] = "black",
+        font: ImageFont.FreeTypeFont | Font,
+        color: int | str | tuple[int, int, int] | tuple[int, int, int, int] = "black",
     ) -> None:
         self.text = text
         self.color = color

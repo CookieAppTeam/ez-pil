@@ -8,7 +8,7 @@ Example of owo leveling card
     from easy_pil import Canvas, Editor, Font
 
     user_data = {
-        "name": "Shahriyar#9770",
+        "name": "tibue99",
         "bio": "An Example Bot user",
         "level": "15",
         "xp": "1.2k / 3k",

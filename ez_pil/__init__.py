@@ -10,14 +10,14 @@ from .workspace import Workspace
 __version__ = "0.4.0"
 
 __all__ = [
-    "__version__",
+    "AioEditor",
     "Canvas",
     "Editor",
-    "GifEditor",
-    "AioEditor",
-    "Workspace",
     "Font",
+    "GifEditor",
     "Text",
+    "Workspace",
+    "__version__",
     "load_image",
     "load_image_async",
     "run_in_executor",

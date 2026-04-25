@@ -26,7 +26,7 @@ background.text(
 )
 background.text(
     (400, 325),
-    "Shahriyar#9770",
+    "tibue99",
     color="white",
     font=poppins_small,
     align="center",

@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from io import BytesIO
 from pathlib import Path
-from typing import List, Literal, Optional, Tuple, Union
+from typing import Literal
 
-from PIL import Image as PilImage, ImageDraw, ImageFilter, ImageFont
+from PIL import Image as PilImage
+from PIL import ImageDraw, ImageFilter, ImageFont
 from PIL.Image import Image
 
 from .canvas import Canvas
@@ -22,26 +23,22 @@ class Editor:
         Image or Canvas to edit.
     """
 
-    def __init__(
-        self, _image: Union[Image, str, BytesIO, Editor, Canvas, Path]
-    ) -> None:
+    def __init__(self, _image: Image | str | BytesIO | Editor | Canvas | Path) -> None:
+        self.image: Image
         if isinstance(_image, (str, BytesIO, Path)):
-            self.image: Image = PilImage.open(_image)
+            self.image = PilImage.open(_image)
         elif isinstance(_image, (Canvas, Editor)):
-            self.image: Image = _image.image
+            self.image = _image.image
         elif isinstance(_image, Image):
-            self.image: Image = _image
+            self.image = _image
         else:
-            raise ValueError(
-                "Editor requires an Image, Path, "
-                "Editor or Canvas to start with"
-            )
+            raise ValueError("Editor requires an Image, Path, Editor or Canvas to start with")
 
         self.image = self.image.convert("RGBA")
 
     @property
     def image_bytes(self) -> BytesIO:
-        """Return image bytes
+        """Return image bytes.
 
         Returns
         -------
@@ -57,8 +54,8 @@ class Editor:
     def close(self):
         self.image.close()
 
-    def resize(self, size: Tuple[int, int], crop=False) -> Editor:
-        """Resize image
+    def resize(self, size: tuple[int, int], crop: bool = False) -> Editor:
+        """Resize image.
 
         Parameters
         ----------
@@ -93,7 +90,7 @@ class Editor:
         return self
 
     def rounded_corners(self, radius: int = 10, offset: int = 2) -> Editor:
-        """Make image rounded corners
+        """Make image rounded corners.
 
         Parameters
         ----------
@@ -102,19 +99,12 @@ class Editor:
         offset : int, optional
             Offset pixel while making rounded, by default 2
         """
-        background = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
-        holder = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
-        mask = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
+        background = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
+        holder = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
+        mask = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
         mask_draw = ImageDraw.Draw(mask)
         mask_draw.rounded_rectangle(
-            (offset, offset)
-            + (self.image.size[0] - offset, self.image.size[1] - offset),
+            (offset, offset) + (self.image.size[0] - offset, self.image.size[1] - offset),
             radius=radius,
             fill="black",
         )
@@ -128,16 +118,10 @@ class Editor:
         return self
 
     def circle_image(self) -> Editor:
-        """Make image circle"""
-        background = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
-        holder = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
-        mask = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
+        """Make image circle."""
+        background = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
+        holder = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
+        mask = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
         mask_draw = ImageDraw.Draw(mask)
         ellipse_size = tuple(i - 1 for i in self.image.size)
         mask_draw.ellipse((0, 0) + ellipse_size, fill="black")
@@ -151,7 +135,7 @@ class Editor:
         return self
 
     def rotate(self, deg: float = 0, expand: bool = False) -> Editor:
-        """Rotate image
+        """Rotate image.
 
         Parameters
         ----------
@@ -163,10 +147,8 @@ class Editor:
         self.image = self.image.rotate(deg, expand=expand)
         return self
 
-    def blur(
-        self, mode: Literal["box", "gaussian"] = "gaussian", amount: float = 1
-    ) -> Editor:
-        """Blur image
+    def blur(self, mode: Literal["box", "gaussian"] = "gaussian", amount: float = 1) -> Editor:
+        """Blur image.
 
         Parameters
         ----------
@@ -178,19 +160,17 @@ class Editor:
         if mode == "box":
             self.image = self.image.filter(ImageFilter.BoxBlur(radius=amount))
         if mode == "gaussian":
-            self.image = self.image.filter(
-                ImageFilter.GaussianBlur(radius=amount)
-            )
+            self.image = self.image.filter(ImageFilter.GaussianBlur(radius=amount))
 
         return self
 
     def blend(
         self,
-        image: Union[Image, Editor, Canvas],
+        image: Image | Editor | Canvas,
         alpha: float = 0.0,
         on_top: bool = False,
     ) -> Editor:
-        """Blend image into editor image
+        """Blend image into editor image.
 
         Parameters
         ----------
@@ -216,10 +196,10 @@ class Editor:
 
     def paste(
         self,
-        image: Union[Image, Editor, Canvas],
-        position: Tuple[int, int],
+        image: Image | Editor | Canvas,
+        position: tuple[int, int],
     ) -> Editor:
-        """Paste image into editor
+        """Paste image into editor.
 
         Parameters
         ----------
@@ -228,9 +208,7 @@ class Editor:
         position : Tuple[int, int]
             Position to paste
         """
-        blank = PilImage.new(
-            "RGBA", size=self.image.size, color=(255, 255, 255, 0)
-        )
+        blank = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
 
         if isinstance(image, Editor) or isinstance(image, Canvas):
             image = image.image
@@ -244,15 +222,15 @@ class Editor:
 
     def text(
         self,
-        position: Tuple[float, float],
+        position: tuple[float, float],
         text: str,
-        font: Optional[Union[ImageFont.FreeTypeFont, Font]] = None,
+        font: ImageFont.FreeTypeFont | Font | None = None,
         color: Color = "black",
         align: Literal["left", "center", "right"] = "left",
-        stroke_width: Optional[int] = None,
+        stroke_width: int | None = None,
         stroke_fill: Color = "black",
     ) -> Editor:
-        """Draw text into image
+        """Draw text into image.
 
         Parameters
         ----------
@@ -297,12 +275,12 @@ class Editor:
 
     def multi_text(
         self,
-        position: Tuple[float, float],
-        texts: List[Text],
+        position: tuple[float, float],
+        texts: list[Text],
         space_separated: bool = True,
         align: Literal["left", "center", "right"] = "left",
     ) -> Editor:
-        """Draw multicolor text
+        """Draw multicolor text.
 
         Parameters
         ----------
@@ -353,16 +331,16 @@ class Editor:
 
     def rectangle(
         self,
-        position: Tuple[float, float],
+        position: tuple[float, float],
         width: float,
         height: float,
-        fill: Optional[Color] = None,
-        color: Optional[Color] = None,
-        outline: Optional[Color] = None,
+        fill: Color | None = None,
+        color: Color | None = None,
+        outline: Color | None = None,
         stroke_width: float = 1,
         radius: int = 0,
     ) -> Editor:
-        """Draw rectangle into image
+        """Draw rectangle into image.
 
         Parameters
         ----------
@@ -411,17 +389,17 @@ class Editor:
 
     def bar(
         self,
-        position: Tuple[int, int],
-        max_width: Union[int, float],
-        height: Union[int, float],
+        position: tuple[int, int],
+        max_width: int | float,
+        height: int | float,
         percentage: int = 1,
-        fill: Optional[Color] = None,
-        color: Optional[Color] = None,
-        outline: Optional[Color] = None,
+        fill: Color | None = None,
+        color: Color | None = None,
+        outline: Color | None = None,
         stroke_width: float = 1,
         radius: int = 0,
     ) -> Editor:
-        """Draw a progress bar
+        """Draw a progress bar.
 
         Parameters
         ----------
@@ -451,9 +429,7 @@ class Editor:
             fill = color
 
         bg = PilImage.new("RGBA", (int(max_width), int(height)), (0, 0, 0, 0))
-        main = PilImage.new(
-            "RGBA", (int(max_width), int(height)), (0, 0, 0, 0)
-        )
+        main = PilImage.new("RGBA", (int(max_width), int(height)), (0, 0, 0, 0))
         mask = PilImage.new("L", (int(max_width), int(height)), 0)
         main_draw = ImageDraw.Draw(main)
 
@@ -499,15 +475,15 @@ class Editor:
 
     def rounded_bar(
         self,
-        position: Tuple[float, float],
-        width: Union[int, float],
-        height: Union[int, float],
+        position: tuple[float, float],
+        width: int | float,
+        height: int | float,
         percentage: float,
-        fill: Optional[Color] = None,
-        color: Optional[Color] = None,
+        fill: Color | None = None,
+        color: Color | None = None,
         stroke_width: float = 1,
     ) -> Editor:
-        """Draw a rounded bar
+        """Draw a rounded bar.
 
         Parameters
         ----------
@@ -546,15 +522,15 @@ class Editor:
 
     def ellipse(
         self,
-        position: Tuple[float, float],
+        position: tuple[float, float],
         width: float,
         height: float,
-        fill: Optional[Color] = None,
-        color: Optional[Color] = None,
-        outline: Optional[Color] = None,
+        fill: Color | None = None,
+        color: Color | None = None,
+        outline: Color | None = None,
         stroke_width: float = 1,
     ) -> Editor:
-        """Draw an ellipse
+        """Draw an ellipse.
 
         Parameters
         ----------
@@ -592,11 +568,11 @@ class Editor:
     def polygon(
         self,
         coordinates: list,
-        fill: Optional[Color] = None,
-        color: Optional[Color] = None,
-        outline: Optional[Color] = None,
+        fill: Color | None = None,
+        color: Color | None = None,
+        outline: Color | None = None,
     ) -> Editor:
-        """Draw a polygon
+        """Draw a polygon.
 
         Parameters
         ----------
@@ -619,16 +595,16 @@ class Editor:
 
     def arc(
         self,
-        position: Tuple[float, float],
+        position: tuple[float, float],
         width: float,
         height: float,
         start: float,
         rotation: float,
-        fill: Optional[Color] = None,
-        color: Optional[Color] = None,
+        fill: Color | None = None,
+        color: Color | None = None,
         stroke_width: float = 1,
     ) -> Editor:
-        """Draw arc
+        """Draw arc.
 
         Parameters
         ----------
@@ -671,8 +647,8 @@ class Editor:
         """Show the image."""
         self.image.show()
 
-    def save(self, fp, file_format: Optional[str] = None, **params):
-        """Save the image
+    def save(self, fp: str, file_format: str | None = None, **params):
+        """Save the image.
 
         Parameters
         ----------

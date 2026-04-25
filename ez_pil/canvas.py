@@ -1,12 +1,10 @@
-from typing import Optional, Tuple
-
 from PIL import Image
 
 from .types.common import Color
 
 
 class Canvas:
-    """Canvas class
+    """Canvas class.
 
     Parameters
     ----------
@@ -27,7 +25,7 @@ class Canvas:
 
     def __init__(
         self,
-        size: Optional[Tuple[int, int]] = None,
+        size: tuple[int, int] | None = None,
         width: int = 0,
         height: int = 0,
         color: Color = 0,
