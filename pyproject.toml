@@ -8,7 +8,6 @@ keywords = ["easy-pil", "easy pillow", "Pillow", "image editing"]
 authors = [
     { name = "tibue99" }
 ]
-readme = "README.md"
 homepage = "https://github.com/shahriyardx/easy-pil"
 repository = "https://github.com/shahriyardx/easy-pil"
 documentation = "https://easy-pil.readthedocs.io/en/latest/"
