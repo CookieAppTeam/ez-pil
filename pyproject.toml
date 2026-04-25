@@ -8,9 +8,6 @@ keywords = ["easy-pil", "easy pillow", "Pillow", "image editing"]
 authors = [
     { name = "tibue99" }
 ]
-homepage = "https://github.com/shahriyardx/easy-pil"
-repository = "https://github.com/shahriyardx/easy-pil"
-documentation = "https://easy-pil.readthedocs.io/en/latest/"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -39,6 +36,10 @@ version = {attr = "easy_pil.__version__"}
 
 [tool.setuptools.dynamic.optional-dependencies]
 docs = {file = "docs/requirements.txt"}
+
+[project.urls]
+GitHub = "https://github.com/CookieAppTeam/ez-pil"
+Documentation = "https://easy-pil.readthedocs.io/en/latest/"
 
 [build-system]
 requires = ["setuptools>=62.6", "wheel"]
