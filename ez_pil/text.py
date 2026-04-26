@@ -8,11 +8,11 @@ class Text:
 
     Parameters
     ----------
-    text : str
+    text:
         Text
-    font : ImageFont.FreeTypeFont
+    font:
         Font for text
-    color : Color, optional
+    color:
         Font color, by default "black"
     """
 

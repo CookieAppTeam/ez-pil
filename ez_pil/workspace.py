@@ -21,9 +21,9 @@ class Workspace:
 
         Parameters
         ----------
-        name : str
+        name:
             name of the layer
-        background: Color
+        background:
             background color of the layer
         """
         self.layers[name] = {
@@ -38,7 +38,7 @@ class Workspace:
 
         Parameters
         ----------
-        name : str
+        name:
             name of the layer
 
         Raises
@@ -61,11 +61,11 @@ class Workspace:
 
         Parameters
         ----------
-        layer_name : str
+        layer_name:
             name of the layer
-        new_layer_name: str, Optional
+        new_layer_name:
             updated name of the layer, defaults to None
-        background: Color
+        background:
             background color of the layer, defaults to None
 
         Raises
@@ -87,7 +87,7 @@ class Workspace:
 
         Parameters
         ----------
-        name : str
+        name:
             name of the layer
 
         Raises
@@ -115,13 +115,13 @@ class Workspace:
 
         Parameters
         ----------
-        layer_name : str
+        layer_name:
             name of the layer
-        identifier : str
+        identifier:
             unique name for a component
-        func : Union[Callable, str]
+        func:
             the function or function name from editor class
-        options : ComponentKwargs
+        options:
             keyword arguments for the func
 
         Raises
@@ -150,9 +150,9 @@ class Workspace:
 
         Parameters
         ----------
-        layer_name : str
+        layer_name:
             name of the layer
-        identifier : str
+        identifier:
             unique name for a component
 
         Raises
@@ -177,11 +177,11 @@ class Workspace:
 
         Parameters
         ----------
-        layer_name : str
+        layer_name:
             name of the layer
-        identifier : str
+        identifier:
             unique name for a component
-        options : ComponentKwargs
+        options:
             modified options
 
         Raises

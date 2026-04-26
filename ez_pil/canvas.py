@@ -8,14 +8,14 @@ class Canvas:
 
     Parameters
     ----------
-    size : Tuple[int, int], optional
-        Size of image, by default None
-    width : int, optional
-        Width of image, by default None
-    height : int, optional
-        Height of image, by default None
-    color : Color, optional
-        Color of image, by default None
+    size:
+        Size of image, by default None.
+    width:
+        Width of image, by default None.
+    height:
+        Height of image, by default None.
+    color:
+        Color of image, by default None.
 
     Raises
     ------

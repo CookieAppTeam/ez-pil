@@ -14,7 +14,7 @@ async def run_in_executor(func: Callable, **kwargs):
 
     Parameters
     ----------
-    func : func
+    func:
         Function to run
     """
     func = functools.partial(func, **kwargs)
@@ -27,15 +27,10 @@ def load_image(link: str, raw: bool = False) -> Image.Image | GifImageFile:
 
     Parameters
     ----------
-    link : str
+    link:
         Image link
-    raw: bool
+    raw:
         if you want the raw image without any conversion
-
-    Returns
-    -------
-    PIL.Image.Image
-        Image from the provided link (if any)
     """
     _bytes = BytesIO(requests.get(link).content)
     image = Image.open(_bytes)
@@ -54,17 +49,12 @@ async def load_image_async(
 
     Parameters
     ----------
-    link : str
+    link:
         Image from the provided link (if any)
-    session: aiohttp.ClientSession
-        clientSession for making requests, defaults to None
+    session:
+        ClientSession for making requests, defaults to None
     raw: bool
         if you want the raw image without any conversion
-
-    Returns
-    -------
-    PIL.Image.Image
-        Image link
     """
     if isinstance(session, aiohttp.ClientSession):
         async with session.get(link) as response:  # type: ignore

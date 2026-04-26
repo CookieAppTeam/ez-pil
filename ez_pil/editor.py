@@ -38,13 +38,7 @@ class Editor:
 
     @property
     def image_bytes(self) -> BytesIO:
-        """Return image bytes.
-
-        Returns
-        -------
-        BytesIO
-            Bytes from the image of Editor
-        """
+        """Return image bytes."""
         _bytes = BytesIO()
         self.image.save(_bytes, "png")
 
@@ -59,9 +53,9 @@ class Editor:
 
         Parameters
         ----------
-        size : Tuple[int, int]
+        size:
             New Size of image
-        crop : bool, optional
+        crop:
             Crop the image to bypass distortion, by default False
         """
         if not crop:
@@ -94,9 +88,9 @@ class Editor:
 
         Parameters
         ----------
-        radius : int, optional
+        radius:
             Radius of roundness, by default 10
-        offset : int, optional
+        offset:
             Offset pixel while making rounded, by default 2
         """
         background = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
@@ -139,9 +133,9 @@ class Editor:
 
         Parameters
         ----------
-        deg : float, optional
+        deg:
             Degrees to rotate, by default 0
-        expand : bool, optional
+        expand:
             Expand while rotating, by default False
         """
         self.image = self.image.rotate(deg, expand=expand)
@@ -174,11 +168,11 @@ class Editor:
 
         Parameters
         ----------
-        image : Union[Image, Editor, Canvas]
+        image:
             Image to blend
-        alpha : float, optional
+        alpha:
             Alpha amount, by default 0.0
-        on_top : bool, optional
+        on_top:
             Places image on top, by default False
         """
         if isinstance(image, Editor) or isinstance(image, Canvas):
@@ -203,9 +197,9 @@ class Editor:
 
         Parameters
         ----------
-        image : Union[Image, Editor, Canvas]
+        image:
             Image to paste
-        position : Tuple[int, int]
+        position:
             Position to paste
         """
         blank = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
@@ -234,20 +228,20 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[float, float]
+        position:
             Position to draw text.
-        text : str
+        text:
             Text to draw
-        font : Union[ImageFont.FreeTypeFont, Font], optional
+        font:
             Font used for text, by default None
-        color : Color, optional
+        color:
             Color of the font, by default "black"
-        align : Literal["left", "center", "right"], optional
+        align:
             Align text, by default "left"
-        stroke_width : int, optional
+        stroke_width:
             Whether there should be any stroke. Defaults to
             None. It represents the width of the said stroke.
-        stroke_fill : Color, optional
+        stroke_fill:
             Color of the stroke, if any stroke is applied to the
             text. Defaults to "black"
         """
@@ -284,13 +278,13 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[float, float]
+        position:
             Position to draw text
-        texts : List[Text]
+        texts:
             List of texts
-        space_separated : bool, optional
+        space_separated:
             Separate texts with space, by default True
-        align : Literal["left", "center", "right"], optional
+        align:
             Align texts, by default "left"
         """
         draw = ImageDraw.Draw(self.image)
@@ -344,21 +338,21 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[float, float]
+        position:
             Position to draw rectangle
-        width : float
+        width:
             Width of rectangle
-        height : float
+        height:
             Height of rectangle
-        fill : Color, optional
+        fill:
             Fill color, by default None
-        color : Color, optional
+        color:
             Alias of fill, by default None
-        outline : Color, optional
+        outline:
             Outline color, by default None
-        stroke_width : float, optional
+        stroke_width:
             Stroke width, by default 1
-        radius : int, optional
+        radius:
             Radius of rectangle, by default 0
         """
         draw = ImageDraw.Draw(self.image)

@@ -30,13 +30,7 @@ class GifEditor:
 
     @property
     def image_bytes(self) -> BytesIO:
-        """Return image bytes.
-
-        Returns
-        -------
-        BytesIO
-            Bytes from the image of Editor
-        """
+        """Return image bytes."""
         _bytes = BytesIO()
         images = [e.image for e in self.frames]
         images[0].save(_bytes, "GIF", save_all=True, append_images=images[1:])

@@ -34,9 +34,9 @@ class Font:
 
     Parameters
     ----------
-    path : str
+    path:
         Path of font
-    size : int, optional
+    size:
         Size of font, by default 10
     """
 
@@ -57,9 +57,9 @@ class Font:
 
         Parameters
         ----------
-        variant : Literal["regular", "bold", "italic", "light"], optional
+        variant:
             Font variant, by default "regular"
-        size : int, optional
+        size:
             Font size, by default 10
         """
         return ImageFont.truetype(fonts_path["poppins"][variant], size=size)
@@ -74,9 +74,9 @@ class Font:
 
         Parameters
         ----------
-        variant : Literal["regular", "bold", "italic", "light"], optional
+        variant:
             Font variant, by default "regular"
-        size : int, optional
+        size:
             Font size, by default 10
         """
         return ImageFont.truetype(fonts_path["caveat"][variant], size=size)
@@ -91,9 +91,9 @@ class Font:
 
         Parameters
         ----------
-        variant : Literal["regular", "bold", "italic", "light"], optional
+        variant:
             Font variant, by default "regular"
-        size : int, optional
+        size:
             Font size, by default 10
         """
         return ImageFont.truetype(fonts_path["montserrat"][variant], size=size)
