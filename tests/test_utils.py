@@ -6,10 +6,7 @@ from ez_pil import AioEditor, Canvas, Editor, load_image, load_image_async
 
 
 class TestUtils(unittest.IsolatedAsyncioTestCase):
-    url: str = (
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/"
-        "f/f9/Flag_of_Bangladesh.svg/800px-Flag_of_Bangladesh.svg.png"
-    )
+    url: str = "https://cdn.cookieapp.me/bot/logo.png"
 
     def test_load_image(self):
         img = load_image(self.url)
