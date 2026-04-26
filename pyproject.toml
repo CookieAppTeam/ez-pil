@@ -37,6 +37,9 @@ Documentation = "https://easy-pil.readthedocs.io/en/latest/"
 requires = ["setuptools>=62.6", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.commands]
 fmt = "python3 -m black . ;python3 -m isort ."
 build = "python3 -m setup.py sdist bdist_wheel"

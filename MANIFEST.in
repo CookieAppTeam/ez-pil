@@ -1,4 +1,1 @@
-include requirements.txt
-include LICENSE
-include *.md
-include *.ttf
+recursive-include ez_pil *.ttf
