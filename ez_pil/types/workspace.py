@@ -1,12 +1,6 @@
 from io import BytesIO
 from pathlib import Path
-
-try:
-    from typing import Literal, NotRequired, TypedDict
-except ImportError:
-    from typing import Literal, NotRequired
-
-    from typing_extensions import TypedDict
+from typing import Literal, NotRequired, TypedDict
 
 from PIL.Image import Image
 from PIL.ImageFont import FreeTypeFont
