@@ -146,9 +146,9 @@ class Editor:
 
         Parameters
         ----------
-        mode : Literal["box", "gaussian"], optional
+        mode:
             Blur mode, by default "gaussian"
-        amount : float, optional
+        amount:
             Amount of blur, by default 1
         """
         if mode == "box":
@@ -397,23 +397,23 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[int, int]
+        position:
             Position to draw bar
-        max_width : Union[int, float]
+        max_width:
             Max width of the bar
-        height : Union[int, float]
+        height:
             Height of the bar
-        percentage : int, optional
+        percentage:
             Percentage to fill of the bar, by default 1
-        fill : Color, optional
+        fill:
             Fill color, by default None
-        color : Color, optional
+        color:
             Alias of fill, by default None
-        outline : Color, optional
+        outline:
             Outline color, by default None
-        stroke_width : float, optional
+        stroke_width:
             Stroke width, by default 1
-        radius : int, optional
+        radius:
             Radius of the bar, by default 0
         """
         if percentage == 0:
@@ -481,19 +481,19 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[float, float]
+        position:
             Position to draw rounded bar
-        width : Union[int, float]
+        width:
             Width of the bar
-        height : Union[int, float]
+        height:
             Height of the bar
-        percentage : float
+        percentage:
             Percentage to fill.
-        fill : Color, optional
+        fill:
             Fill color, by default None
-        color : Color, optional
+        color:
             Alias of color, by default None
-        stroke_width : float, optional
+        stroke_width:
             Stroke width, by default 1
         """
         draw = ImageDraw.Draw(self.image)
@@ -528,19 +528,19 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[float, float]
+        position:
             Position to draw ellipse
-        width : float
+        width:
             Width of ellipse
-        height : float
+        height:
             Height of ellipse
-        fill : Color, optional
+        fill:
             Fill color, by default None
-        color : Color, optional
+        color:
             Alias of fill, by default None
-        outline : Color, optional
+        outline:
             Outline color, by default None
-        stroke_width : float, optional
+        stroke_width:
             Stroke width, by default 1
         """
         draw = ImageDraw.Draw(self.image)
@@ -570,13 +570,13 @@ class Editor:
 
         Parameters
         ----------
-        coordinates : list
+        coordinates:
             Coordinates to draw
-        fill : Color, optional
+        fill:
             Fill color, by default None
-        color : Color, optional
+        color:
             Alias of fill, by default None
-        outline : Color, optional
+        outline:
             Outline color, by default None
         """
         if color:
@@ -602,21 +602,21 @@ class Editor:
 
         Parameters
         ----------
-        position : Tuple[float, float]
+        position:
             Position to draw arc
-        width : float
+        width:
             Width or arc
-        height : float
+        height:
             Height of arch
-        start : float
+        start:
             Start position of arch
-        rotation : float
+        rotation:
             Rotation in degree
-        fill : Color, optional
+        fill:
             Fill color, by default None
-        color : Color, optional
+        color:
             Alias of fill, by default None
-        stroke_width : float, optional
+        stroke_width:
             Stroke width, by default 1
         """
         draw = ImageDraw.Draw(self.image)
@@ -646,9 +646,9 @@ class Editor:
 
         Parameters
         ----------
-        fp : str
+        fp:
             File path
-        file_format : str, optional
+        file_format:
             File format, by default None
         """
         self.image.save(fp, file_format, **params)
