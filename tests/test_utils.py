@@ -13,7 +13,11 @@ class TestUtils(unittest.IsolatedAsyncioTestCase):
         self.assertIsInstance(img, Image.Image)
 
     async def test_load_image_async(self):
-        img = await load_image_async(self.url)
+        img = await load_image_async(self.url, fallback_image=False)
+        self.assertIsInstance(img, Image.Image)
+
+    async def test_load_invalid_image_async(self):
+        img = await load_image_async("https://cdn.cookieapp.me/this-image-does-not-exist.png")
         self.assertIsInstance(img, Image.Image)
 
     async def test_cache(self):

@@ -5,7 +5,7 @@ from io import BytesIO
 
 import aiohttp
 import requests
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 from PIL.GifImagePlugin import GifImageFile
 
 
@@ -44,6 +44,8 @@ async def load_image_async(
     link: str,
     session: aiohttp.ClientSession | None = None,
     raw: bool = False,
+    *,
+    fallback_image: bool = True,
 ) -> Image.Image | GifImageFile:
     """Load image from link (async).
 
@@ -55,6 +57,8 @@ async def load_image_async(
         ClientSession for making requests, defaults to None
     raw: bool
         if you want the raw image without any conversion
+    fallback_image:
+        Whether to return a fallback image if the provided link is invalid, defaults to True
     """
     if isinstance(session, aiohttp.ClientSession):
         async with session.get(link) as response:  # type: ignore
@@ -65,7 +69,15 @@ async def load_image_async(
                 data = await response.read()
 
     _bytes = BytesIO(data)
-    image = Image.open(_bytes)
+    try:
+        image = Image.open(_bytes)
+    except UnidentifiedImageError:
+        if fallback_image:
+            return await load_image_async(
+                "https://cdn.discordapp.com/embed/avatars/0.png", None, raw, fallback_image=False
+            )
+        raise
+
     if not raw:
         image = image.convert("RGBA")
 
