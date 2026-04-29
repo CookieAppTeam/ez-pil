@@ -4,3 +4,6 @@ aiohttp
 Pillow
 requests
 typing_extensions
+sphinx
+sphinx-autodoc-typehints
+sphinx-copybutton

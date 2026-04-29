@@ -1,6 +1,6 @@
 Examples
 =================
-Here are some examples made using easy-pil
+Here are some examples made using ez-pil.
 
 .. toctree::
    :maxdepth: 4
@@ -10,6 +10,12 @@ Here are some examples made using easy-pil
    rank_card_two
    welcome_image
    welcome_image_two
+   aio
 
-.. note::
-   More examples will be added in future.
+
+Discord Bot
+-----------
+This example uses Pycord / Ezcord. It makes the command author's avatar circular and send it.
+
+.. literalinclude:: ../../examples/discord.py
+   :language: python

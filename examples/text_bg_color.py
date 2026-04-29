@@ -1,6 +1,8 @@
-from easy_pil import Canvas, Editor, Font
+from ez_pil import Editor, Font, load_image
 
-bg = Editor(Canvas(width=300, height=200, color="white"))
+background = load_image("https://cdn.cookieapp.me/banner/space.png")
+
+bg = Editor(background).resize((310, 120))
 font_1 = Font.poppins(variant="regular", size=30)
 font_2 = Font.poppins(variant="regular", size=50)
 

@@ -1,17 +1,40 @@
-# Easy PIL
-![Lint-Test](https://github.com/shahriyardx/easy-pil/actions/workflows/lint-test.yml/badge.svg)
+# Ez PIL
+[![](https://img.shields.io/pypi/v/ez-pil.svg?style=for-the-badge&logo=pypi&color=yellow&logoColor=white)](https://pypi.org/project/ez-pil/)
+[![](https://img.shields.io/pypi/l/ez-pil?style=for-the-badge)](https://github.com/tibue99/ez-pil/blob/main/LICENSE)
 
-A Python library built on top of [PIL](https://github.com/python-pillow/Pillow) to easily edit/modify images.
+An easy-to-use extension for [PIL](https://github.com/python-pillow/Pillow) to edit and modify images.
 
-## Getting Started
-Using this for the first time? Here are some links to help you get started.
+## Installation
+Python 3.12 or higher is required.
+```bash
+pip install ez-pil
+```
 
-- Read the [docs](https://easy-pil.readthedocs.io/en/latest/)
-- First steps [Introduction](https://easy-pil.readthedocs.io/en/latest/pages/intro.html)
-- Integrate in a [Discord bot](https://easy-pil.readthedocs.io/en/latest/pages/discordbot.html)
-- Some premade [Examples](https://github.com/shahriyardx/easy-pil/tree/master/examples)
-- [Report bugs](https://github.com/shahriyardx/easy-pil/issues/)
+## Examples
+Example for Discord Bot integration. For further information, see the [Documentation](https://ez-pil.readthedocs.io/).
 
-## Get help
-- Ask us in our [Discord server](https://discord.gg/fVzt5THTNb)
-- Watch [Youtube Tutorials](https://www.youtube.com/playlist?list=PLb_oBhGqAlbT4yVqV0TSXggA8b0lZhGhn)
+```python
+import discord
+import ezcord
+from ez_pil import Editor, load_image_async
+
+bot = ezcord.Bot()
+
+@bot.slash_command()
+async def circle(ctx):
+    # Load the image using `load_image_async` method
+    image = await load_image_async(ctx.author.display_avatar.url)
+
+    # Initialize the editor and pass image as a parameter
+    editor = Editor(image).circle_image()
+
+    # Creating File object from image_bytes from editor
+    file = discord.File(fp=editor.image_bytes, filename='circle.png')
+
+    await ctx.respond(file=file)
+
+bot.run("TOKEN")
+```
+
+## Credits
+This repository is a fork of [easy-pil](https://github.com/shahriyardx/easy-pil), because the original repository is no longer maintained 👻

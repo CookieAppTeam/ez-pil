@@ -1,12 +1,11 @@
-from easy_pil import Canvas, Editor, Font
+from ez_pil import Canvas, Editor, Font
 
 background = Editor(Canvas((900, 270), color="#23272a"))
 profile = Editor("assets/pfp.png").resize((200, 200)).circle_image()
 
-# To use users profile picture load it from url
-# using the load_image/load_image_async function
-# profile_image = load_image(str(ctx.author.avatar_url))
-# profile = Editor(profile_image).resize((150, 150)).circle_image()
+# To use users profile picture load it from url using the load_image/load_image_async function
+# profile_image = load_image(ctx.user.display_avatar.url)
+# profile = Editor(profile_image).resize((200, 200)).circle_image()
 
 
 # Fonts to use with different size
@@ -20,12 +19,10 @@ card_left_shape = [(0, 0), (0, 270), (330, 270), (260, 0)]
 background.polygon(card_left_shape, "#2C2F33")
 background.paste(profile, (40, 35))
 background.ellipse((40, 35), 200, 200, outline="white", stroke_width=3)
-background.text(
-    (600, 20), "WELCOME", font=poppins_big, color="white", align="center"
-)
+background.text((600, 20), "WELCOME", font=poppins_big, color="white", align="center")
 background.text(
     (600, 70),
-    "Shahriyar#9770",
+    "tibue99",
     font=poppins_regular,
     color="white",
     align="center",
@@ -39,7 +36,7 @@ background.text(
 )
 background.text(
     (600, 160),
-    "GUILD 4359",
+    "4269",
     font=poppins_regular,
     color="white",
     align="center",

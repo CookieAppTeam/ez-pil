@@ -1,0 +1,44 @@
+# For a full list of rules, go to https://docs.astral.sh/ruff/rules/
+
+line-length = 100
+fix = true
+
+exclude = [
+    "examples"
+]
+
+[lint]
+extend-select = [
+    "A",
+    "ANN001",
+    "ARG",
+    "ASYNC",
+    "B007",
+    "C4",
+    "D2",
+    "D4",
+    "E",
+    "FAST",
+    "FBT003",
+    "FLY",
+    "FURB",
+    "I",
+    "ISC",
+    "N",
+    "PIE",
+    "PT",
+    "RET501",
+    "RUF",
+    "SLF",
+    "T20",
+    "UP",
+    "W",
+]
+
+ignore = [
+    "RUF005",
+    "PT009",
+]
+
+[lint.pydocstyle]
+convention = "numpy"

@@ -1,11 +1,11 @@
 import unittest
 
-from easy_pil import Canvas
+from ez_pil import Canvas
 
 
 class TestCanvas(unittest.TestCase):
     def test_canvas(self):
-        """Tests canvas"""
+        """Test canvas."""
         canvas = Canvas((100, 100), color="black")
         canvas2 = Canvas(width=100, height=100, color="black")
         self.assertEqual(canvas.size, (100, 100))

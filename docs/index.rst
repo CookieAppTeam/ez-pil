@@ -1,36 +1,28 @@
-Welcome to Easy PIL's documentation!
+Welcome to EzPIL!
 ====================================
-A python library built on top of PIL to easily edit images.
+A library built on top of PIL to easily edit images.
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Contents
 
-   pages/intro
-   pages/discordbot
-   pages/aio
-   easy_pil/modules
+   ez_pil/modules
    examples/index
 
-Getting Started
----------------
-Using this for the first time? Here are some links to help you get started.
 
-- First steps :doc:`/pages/intro`
-- In a discord bot :doc:`pages/discordbot`
-- How to use it in async way :doc:`pages/aio`
-- Searching for something :ref:`search` and :ref:`genindex`
-- Report bugs `Here <https://github.com/shahriyardx/easy-pil/issues/>`_
+Installing
+-----------
+Python 3.12 or higher is required.
 
-Get help
----------
-- Ask us in our `Discord <https://discord.gg/4rd4JQWmsY>`_ server
-- Watch `Youtube Tutorials <https://www.youtube.com/playlist?list=PLb_oBhGqAlbT4yVqV0TSXggA8b0lZhGhn>`_
+.. code-block::
 
-Links
----------
+    pip install ez-pil
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+
+Examples
+--------
+A quick example for Discord bot integration. For more examples, check the :doc:`examples <examples/index>` section.
+
+.. literalinclude:: ../examples/discord.py
+   :language: python
