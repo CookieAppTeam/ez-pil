@@ -45,7 +45,7 @@ async def load_image_async(
     session: aiohttp.ClientSession | None = None,
     raw: bool = False,
     *,
-    fallback_image: bool = True,
+    fallback_image: str | None = "https://cdn.discordapp.com/embed/avatars/0.png",
 ) -> Image.Image | GifImageFile:
     """Load image from link (async).
 
@@ -58,7 +58,7 @@ async def load_image_async(
     raw: bool
         if you want the raw image without any conversion
     fallback_image:
-        Whether to return a fallback image if the provided link is invalid, defaults to True
+        Return a fallback image if the provided link is invalid. Defaults to a Discord avatar.
     """
     if isinstance(session, aiohttp.ClientSession):
         async with session.get(link) as response:  # type: ignore
@@ -73,9 +73,7 @@ async def load_image_async(
         image = Image.open(_bytes)
     except UnidentifiedImageError:
         if fallback_image:
-            return await load_image_async(
-                "https://cdn.discordapp.com/embed/avatars/0.png", None, raw, fallback_image=False
-            )
+            return await load_image_async(fallback_image, None, raw, fallback_image=False)
         raise
 
     if not raw:
