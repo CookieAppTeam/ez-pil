@@ -13,7 +13,7 @@ class TestUtils(unittest.IsolatedAsyncioTestCase):
         self.assertIsInstance(img, Image.Image)
 
     async def test_load_image_async(self):
-        img = await load_image_async(self.url, fallback_image=False)
+        img = await load_image_async(self.url, fallback_image=None)
         self.assertIsInstance(img, Image.Image)
 
     async def test_load_invalid_image_async(self):
