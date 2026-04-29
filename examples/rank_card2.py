@@ -12,10 +12,9 @@ user_data = {  # Most likely coming from database or calculation
 background = Editor(Canvas((934, 282), color="#23272a"))
 profile = Editor("assets/pfp.png").resize((190, 190)).circle_image()
 
-# To use users profile picture load it from url
-# using the load_image/load_image_async function
-# profile_image = load_image(str(ctx.author.avatar_url))
-# profile = Editor(profile_image).resize((150, 150)).circle_image()
+# To use users profile picture load it from url using the load_image/load_image_async function
+# profile_image = load_image(ctx.user.display_avatar.url)
+# profile = Editor(profile_image).resize((190, 190)).circle_image()
 
 
 poppins = Font.poppins(size=30)
@@ -32,7 +31,7 @@ background.bar(
     fill="#00fa81",
     radius=20,
 )
-background.text((270, 120), user_data["name"], font=poppins, color="#00fa81")
+background.text((270, 130), user_data["name"], font=poppins, color="#00fa81")
 background.text(
     (870, 125),
     f"{user_data['xp']} / {user_data['next_level_xp']}",
@@ -48,7 +47,7 @@ rank_level_texts = [
     Text(f"{user_data['level']}", color="#1EAAFF", font=poppins),
 ]
 
-background.multi_text((850, 30), texts=rank_level_texts, align="right")
+background.multi_text((850, 50), texts=rank_level_texts, align="right")
 
 
 background.show()

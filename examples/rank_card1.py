@@ -1,20 +1,19 @@
 from ez_pil import Canvas, Editor, Font
 
 user_data = {  # Most likely coming from database or calculation
-    "name": "tibue99",  # The user's name
-    "xp": 1240,
-    "next_level_xp": 5000,
-    "level": 5,
+    "name": "tibue99",
+    "xp": 420,
+    "next_level_xp": 6900,
+    "level": 42,
     "percentage": 23,
 }
 
 background = Editor(Canvas((900, 300), color="#23272A"))
 profile = Editor("assets/pfp.png").resize((150, 150)).circle_image()
 
-# To use users profile picture load it from url
-# using the load_image/load_image_async function
-# profile_image = load_image(str(ctx.author.avatar_url))
-# profile = Editor(profile_image).resize((150, 150)).circle_image()
+# To use users profile picture load it from url using the load_image/load_image_async function
+# profile_image = load_image(ctx.user.display_avatar.url)
+# profile = Editor(profile_image).resize((200, 200)).circle_image()
 
 poppins = Font.poppins(size=40)
 poppins_small = Font.poppins(size=30)

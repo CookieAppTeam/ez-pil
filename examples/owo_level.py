@@ -2,8 +2,8 @@ from ez_pil import Canvas, Editor, Font
 
 user_data = {
     "name": "tibue99",
-    "bio": "An Example Bot user",
-    "level": "15",
+    "bio": "An extremely cool Discord user",
+    "level": "69",
     "xp": "1.2k / 3k",
     "percentage": 45,
 }
@@ -12,9 +12,8 @@ user_data = {
 background = Editor(Canvas((800, 240), color="#23272A"))
 profile = Editor("assets/pfp.png").resize((200, 200))
 
-# To use users profile picture load it from url
-# using the load_image/load_image_async function
-# profile_image = load_image(str(ctx.author.avatar_url))
+# To use users profile picture load it from url using the load_image/load_image_async function
+# profile_image = load_image(ctx.user.display_avatar.url)
 # profile = Editor(profile_image).resize((200, 200))
 
 

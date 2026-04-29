@@ -3,10 +3,9 @@ from ez_pil import Canvas, Editor, Font
 background = Editor(Canvas((900, 270), color="#23272a"))
 profile = Editor("assets/pfp.png").resize((200, 200)).circle_image()
 
-# To use users profile picture load it from url
-# using the load_image/load_image_async function
-# profile_image = load_image(str(ctx.author.avatar_url))
-# profile = Editor(profile_image).resize((150, 150)).circle_image()
+# To use users profile picture load it from url using the load_image/load_image_async function
+# profile_image = load_image(ctx.user.display_avatar.url)
+# profile = Editor(profile_image).resize((200, 200)).circle_image()
 
 
 # Fonts to use with different size
@@ -37,7 +36,7 @@ background.text(
 )
 background.text(
     (600, 160),
-    "GUILD 4359",
+    "4269",
     font=poppins_regular,
     color="white",
     align="center",
