@@ -1,6 +1,6 @@
 # Ez PIL
 [![](https://img.shields.io/pypi/v/ez-pil.svg?style=for-the-badge&logo=pypi&color=yellow&logoColor=white)](https://pypi.org/project/ez-pil/)
-[![](https://img.shields.io/pypi/l/ez-pil?style=for-the-badge)](https://github.com/tibue99/ez-pil/blob/main/LICENSE)
+[![](https://img.shields.io/pypi/l/ez-pil?style=for-the-badge)](https://github.com/CookieAppTeam/ez-pil/blob/master/LICENSE)
 
 An easy-to-use extension for [PIL](https://github.com/python-pillow/Pillow) to edit and modify images.
 
