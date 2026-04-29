@@ -1,4 +1,4 @@
-Api Refrerence
+API Refrerence
 =================
 The Python Image Library (PIL) is a Python library for image processing.
 

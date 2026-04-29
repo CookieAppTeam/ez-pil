@@ -1,4 +1,4 @@
-Asyncio Support (AioEditor)
+Asyncio Support
 ===========================
 Demonstration on how to use the AioEditor
 

@@ -1,4 +1,4 @@
-Welcome to Ez PIL's documentation!
+Welcome to EzPIL!
 ====================================
 A python library built on top of PIL to easily edit images.
 
@@ -7,24 +7,29 @@ A python library built on top of PIL to easily edit images.
    :hidden:
    :caption: Contents
 
-   pages/intro
-   pages/discordbot
    pages/aio
-   ez-pil/modules
+   ez_pil/modules
    examples/index
 
-Getting Started
----------------
-Using this for the first time? Here are some links to help you get started.
 
-- First steps :doc:`/pages/intro`
-- In a discord bot :doc:`pages/discordbot`
-- How to use it in async way :doc:`pages/aio`
-- Searching for something :ref:`search` and :ref:`genindex`
+Installing
+-----------
+Python 3.12 or higher is required.
 
-Links
----------
+.. code-block::
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    pip install ez-pil
+
+Examples
+--------
+A quick example of how ez-pil works. For more examples, check the :doc:`examples <examples/index>` section.
+
+.. code-block:: python3
+
+    from ez_pil import Editor, Canvas
+
+    board = Canvas(width=500, height=500)
+    editor = Editor(board)
+
+    editor.text((10, 10), "Hello World")
+    editor.show() # .save() to save the image
