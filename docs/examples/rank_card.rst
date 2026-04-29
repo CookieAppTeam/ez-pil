@@ -1,5 +1,5 @@
 Rank Card [1]
-==============
+===============
 Example of a rank card.
 
 
@@ -8,4 +8,4 @@ Example of a rank card.
 
 Output
 ---------
-.. image:: /_static/examples/rank_card1.png
+.. image:: ../../examples/output/rank_card1.png

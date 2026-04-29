@@ -9,4 +9,4 @@ Example of owo leveling card.
 
 Output
 ---------
-.. image:: /_static/examples/owo_level.png
+.. image:: ../../examples/output/owo_level.png

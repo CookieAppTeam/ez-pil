@@ -8,4 +8,4 @@ Example of a rank card.
 
 Output
 ---------
-.. image:: /_static/examples/rank_card2.png
+.. image:: ../../examples/output/rank_card2.png

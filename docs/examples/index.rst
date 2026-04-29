@@ -10,8 +10,12 @@ Here are some examples made using ez-pil.
    rank_card_two
    welcome_image
    welcome_image_two
+   aio
 
 
 Discord Bot
 -----------
 This example uses Pycord / Ezcord. It makes the command author's avatar circular and send it.
+
+.. literalinclude:: ../../examples/discord.py
+   :language: python

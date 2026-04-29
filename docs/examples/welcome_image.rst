@@ -8,4 +8,4 @@ Example of a welcome image.
 
 Output
 ---------
-.. image:: /_static/examples/welcome_image1.png
+.. image:: ../../examples/output/welcome_image1.png

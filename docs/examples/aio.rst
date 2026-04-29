@@ -1,6 +1,6 @@
 Asyncio Support
 ===========================
-Demonstration on how to use the AioEditor
+Demonstration on how to use the AioEditor to edit images asynchronously.
 
 .. code-block:: python3
 
