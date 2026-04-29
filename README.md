@@ -28,7 +28,7 @@ async def circle(ctx):
     # Initialize the editor and pass image as a parameter
     editor = Editor(image).circle_image()
 
-    # Creating nextcord.File object from image_bytes from editor
+    # Creating File object from image_bytes from editor
     file = discord.File(fp=editor.image_bytes, filename='circle.png')
 
     await ctx.respond(file=file)
