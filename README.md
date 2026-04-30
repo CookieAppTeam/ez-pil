@@ -36,5 +36,19 @@ async def circle(ctx):
 bot.run("TOKEN")
 ```
 
+## Contributing
+If you want to contribute, follow the steps below:
+1. Fork the repository and clone it to your local machine.
+2. Install the dependencies using `pip install -r requirements.txt`.
+3. Make your changes and create a pull request.
+
+You can also run the documentation locally:
+```bash
+cd docs
+pip install -r requirements.txt
+make html
+```
+Now you can open `_build/html/index.html` in your browser.
+
 ## Credits
 This repository is a fork of [easy-pil](https://github.com/shahriyardx/easy-pil), because the original repository is no longer maintained 👻
