@@ -7,7 +7,7 @@ from .text import Text
 from .utils import load_image, load_image_async, run_in_executor
 from .workspace import Workspace
 
-__version__ = "0.4.0"
+__version__ = "0.5.0"
 
 __all__ = [
     "AioEditor",
