@@ -39,13 +39,19 @@ bot.run("TOKEN")
 ## Contributing
 If you want to contribute, follow the steps below:
 1. Fork the repository and clone it to your local machine.
-2. Install the dependencies using `pip install -r requirements.txt`.
-3. Make your changes and create a pull request.
+2. Install the dependencies using `pip install -r requirements-dev.txt`.
+3. Run `pre-commit install` to set up pre-commit hooks.
+4. Make your changes and create a pull request.
+
+You can run tests locally:
+```bash
+pytest
+pre-commit run -a
+```
 
 You can also run the documentation locally:
 ```bash
 cd docs
-pip install -r requirements.txt
 make html
 ```
 Now you can open `_build/html/index.html` in your browser.
