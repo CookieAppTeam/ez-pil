@@ -20,7 +20,8 @@ defaults:
     shell: bash
 
 jobs:
-  lint:
+  style:
+    name: Pre-commit
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +31,8 @@ jobs:
       id: pre-commit
       uses: pre-commit/action@v3.0.0
 
-  pyright:
+  tests:
+    name: Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:

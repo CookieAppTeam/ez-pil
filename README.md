@@ -1,6 +1,6 @@
 # Ez PIL
 [![](https://img.shields.io/pypi/v/ez-pil.svg?style=for-the-badge&logo=pypi&color=yellow&logoColor=white)](https://pypi.org/project/ez-pil/)
-[![](https://img.shields.io/pypi/l/ez-pil?style=for-the-badge)](https://github.com/tibue99/ez-pil/blob/main/LICENSE)
+[![](https://img.shields.io/pypi/l/ez-pil?style=for-the-badge)](https://github.com/CookieAppTeam/ez-pil/blob/master/LICENSE)
 
 An easy-to-use extension for [PIL](https://github.com/python-pillow/Pillow) to edit and modify images.
 
@@ -35,6 +35,26 @@ async def circle(ctx):
 
 bot.run("TOKEN")
 ```
+
+## Contributing
+If you want to contribute, follow the steps below:
+1. Fork the repository and clone it to your local machine.
+2. Install the dependencies using `pip install -r requirements-dev.txt`.
+3. Run `pre-commit install` to set up pre-commit hooks.
+4. Make your changes and create a pull request.
+
+You can run tests locally:
+```bash
+pytest
+pre-commit run -a
+```
+
+You can also run the documentation locally:
+```bash
+cd docs
+make html
+```
+Now you can open `_build/html/index.html` in your browser.
 
 ## Credits
 This repository is a fork of [easy-pil](https://github.com/shahriyardx/easy-pil), because the original repository is no longer maintained 👻

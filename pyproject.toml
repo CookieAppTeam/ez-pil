@@ -28,7 +28,7 @@ docs = {file = "docs/requirements.txt"}
 
 [project.urls]
 GitHub = "https://github.com/CookieAppTeam/ez-pil"
-Documentation = "https://easy-pil.readthedocs.io/en/latest/"
+Documentation = "https://ez-pil.readthedocs.io/en/latest/"
 
 [build-system]
 requires = ["setuptools>=62.6", "wheel"]

@@ -55,7 +55,7 @@ async def load_image_async(
         Image from the provided link (if any)
     session:
         ClientSession for making requests, defaults to None
-    raw: bool
+    raw:
         if you want the raw image without any conversion
     fallback_image:
         Return a fallback image if the provided link is invalid. Defaults to a Discord avatar.
