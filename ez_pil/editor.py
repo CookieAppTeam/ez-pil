@@ -175,7 +175,7 @@ class Editor:
         on_top:
             Places image on top, by default False
         """
-        if isinstance(image, Editor) or isinstance(image, Canvas):
+        if isinstance(image, (Editor, Canvas)):
             image = image.image
 
         if image.size != self.image.size:
@@ -204,7 +204,7 @@ class Editor:
         """
         blank = PilImage.new("RGBA", size=self.image.size, color=(255, 255, 255, 0))
 
-        if isinstance(image, Editor) or isinstance(image, Canvas):
+        if isinstance(image, (Editor, Canvas)):
             image = image.image
 
         blank.paste(image, position)
@@ -288,9 +288,6 @@ class Editor:
             Align texts, by default "left"
         """
         draw = ImageDraw.Draw(self.image)
-
-        if align == "left":
-            position = position
 
         if align == "right":
             total_width = 0
@@ -384,8 +381,8 @@ class Editor:
     def bar(
         self,
         position: tuple[int, int],
-        max_width: int | float,
-        height: int | float,
+        max_width: float,
+        height: float,
         percentage: int = 1,
         fill: Color | None = None,
         color: Color | None = None,
@@ -470,8 +467,8 @@ class Editor:
     def rounded_bar(
         self,
         position: tuple[float, float],
-        width: int | float,
-        height: int | float,
+        width: float,
+        height: float,
         percentage: float,
         fill: Color | None = None,
         color: Color | None = None,
