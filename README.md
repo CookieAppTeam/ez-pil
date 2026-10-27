@@ -29,7 +29,7 @@ async def circle(ctx):
     editor = Editor(image).circle_image()
 
     # Creating File object from image_bytes from editor
-    file = discord.File(fp=editor.image_bytes, filename='circle.png')
+    file = discord.File(fp=editor.image_bytes, filename="circle.png")
 
     await ctx.respond(file=file)
 

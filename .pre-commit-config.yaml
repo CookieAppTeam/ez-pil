@@ -10,7 +10,9 @@ repos:
     rev: v0.17.3
     hooks:
       - id: ruff-check
+        types: [python]
       - id: ruff-format
+        types: [python]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v2.4.0

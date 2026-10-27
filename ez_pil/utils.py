@@ -64,9 +64,8 @@ async def load_image_async(
         async with session.get(link) as response:  # type: ignore
             data = await response.read()
     else:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(link) as response:
-                data = await response.read()
+        async with aiohttp.ClientSession() as client_session, client_session.get(link) as response:
+            data = await response.read()
 
     _bytes = BytesIO(data)
     try:

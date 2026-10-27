@@ -4,7 +4,8 @@ line-length = 100
 fix = true
 
 exclude = [
-    "examples"
+    "examples",
+    "README.md",
 ]
 
 [lint]
@@ -38,6 +39,7 @@ extend-select = [
 ignore = [
     "RUF005",
     "PT009",
+    "TRY004"
 ]
 
 [lint.pydocstyle]
